@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: paradox-mongo-db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+#      TODO import to .env
+      MONGO_INITDB_ROOT_PASSWORD: rollercoin2023
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
